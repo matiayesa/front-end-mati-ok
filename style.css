@@ -37,4 +37,12 @@ body {
 .btn:hover {
   background-color: #663399; 
   cursor: pointer;
+  transform: scale(1,1);
 }
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+ 
+}
+
