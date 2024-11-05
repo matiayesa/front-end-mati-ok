@@ -14,10 +14,12 @@ body {
 
 .container {
   background-color: black;
-  padding: 70px;
+  width: 700px;
+  height: 280px;
+  display: absolute;
   border-radius: 25px;
   text-align: center;
-  margin-bottom: 15px;
+   margin-bottom: 20px;
   border: 5px solid rgb(72, 52, 253);
   
 }
@@ -45,4 +47,6 @@ body {
   justify-content: space-between;
  
 }
+
+
 
