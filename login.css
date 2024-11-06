@@ -31,6 +31,7 @@ body {
 
 .input-group {
     margin-bottom: 15px;
+    
 }
 
 .input-group label {
@@ -43,6 +44,7 @@ body {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #c1c4ca;
 }
 
 .remember-me {
