@@ -4,7 +4,8 @@ body {
   }
   
   .main-container {
-    background-color: rgb(113, 128, 212);
+     background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,45,121,1) 48%);
     height: 100vh;
     display: flex;
     justify-content: center;
