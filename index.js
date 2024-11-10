@@ -13,11 +13,7 @@ correccionY = posicion.y;
 const dibujar = (cursorX, cursorY) => {
   context.beginPath();
   context.moveTo(initialX, initialY);
-<<<<<<< HEAD
   context.lineWidth = 15;
-=======
-  context.lineWidth = 18;
->>>>>>> 76ae704284f20b2eaefe4d799cb32c80644945a4
   context.strokeStyle = "#000";
   context.lineCap = "round";
   context.lineJoin = "round";
