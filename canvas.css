@@ -17,19 +17,19 @@ font-size: 25px;
 
 
 .btn {
-display: inline-block;
-padding: 10px 20px;
-background-color:black;
-color: white;
-border-radius: 10px;
-text-decoration: none;
-transition: background-color 0.3s; 
+  display: inline-block;
+  padding: 10px 20px;
+  background-color:black;
+  color: white;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s; 
 }
 
 .btn:hover {
-background-color: #663399; 
-cursor: pointer;
-transform: scale(1,1);
+  background-color: #362BB0; 
+  cursor: pointer;
+  transform: scale(1,1);
 }
 
 .buttons {
