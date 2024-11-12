@@ -1,26 +1,27 @@
 body {
     background: rgb(2,0,36);
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,45,121,1) 48%);
-  font-family: sans-serif;
+  font-family: cursive;
+  font-size: 64px;
   display: flex;
   color: white;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  font-size: 25px;
+  font-size: 30px;
 
 }
 
 .container {
   background-color: black;
-  width: 700px;
-  height: 280px;
+  width: 900px;
+  height: 340px;
   display: absolute;
   border-radius: 25px;
   text-align: center;
    margin-bottom: 20px;
-  border: 5px solid rgb(72, 52, 253);
+  border: 6px solid #362BB0;
   
 }
 
@@ -37,7 +38,7 @@ body {
 }
 
 .btn:hover {
-  background-color: #663399; 
+  background-color: #362BB0; 
   cursor: pointer;
   transform: scale(1,1);
 }
@@ -48,5 +49,24 @@ body {
  
 }
 
+.btncirculo{
+   align-items: center;
+  justify-content: space-between;
+  background-color:black;
+  color: white;
+  padding: 120px 4px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  font-size: 28px; 
+  border: 5px solid #362BB0;
+  
 
+}
+
+.btncirculo:hover{
+  background-color: #362BB0; 
+  cursor: pointer;
+  transform: scale(1,1);
+}
 
