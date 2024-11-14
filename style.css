@@ -1,6 +1,6 @@
 body {
     background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,45,121,1) 48%);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgb(58, 9, 121) 48%);
   font-family: cursive;
   font-size: 64px;
   display: flex;
@@ -46,8 +46,11 @@ body {
 .buttons {
   display: flex;
   justify-content: space-between;
- 
 }
+
+ 
+
+
 
 .btncirculo{
    align-items: center;
