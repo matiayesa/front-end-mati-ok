@@ -154,7 +154,7 @@ body {
 }
 
 .login-button {
-    display: inline-block;
+   /* display: inline-block; */
     padding: 12px 30px;
     background-color: black;
     color: white;
@@ -162,6 +162,7 @@ body {
     font-size: 20px;
     text-decoration: none;
     transition: background-color 0.3s;
+    border: 4px solid linear-gradient(98.57deg, #6456B7 14.53%, #140380 81.31%);;
 }
 
 .login-button:hover {
