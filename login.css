@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
 }
 
@@ -90,4 +90,135 @@ body {
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+ */
+
+ * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: cursive;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, #080421 0%, #150A5C 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    font-size: 20px;
+}
+
+.login-container {
+    background-color: black;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 570px;
+    height: 400px;
+    border: 5px solid #362BB0;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #c1c4ca;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me input {
+    margin-right: 5px;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #362BB0;
+    cursor: pointer;
+    transform: scale(1, 1);
+}
+
+.footer-links {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #4285f4;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para hacer el diseño responsive */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%; /* Ajusta el ancho para pantallas medianas */
+        height: auto; /* Permite que el contenedor se ajuste al contenido */
+        padding: 15px; /* Reduce el padding */
+    }
+
+    .login-button {
+        font-size: 18px; /* Ajusta el tamaño del botón */
+    }
+
+    body {
+        font-size: 16px; /* Ajusta el tamaño de la fuente */
+    }
+
+    h1 {
+        font-size: 28px; /* Ajusta el tamaño del título */
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        border-width: 3px; /* Reduce el grosor del borde */
+    }
+
+    .login-button {
+        padding: 10px 20px; /* Ajusta el padding del botón */
+    }
+
+    body {
+        font-size: 14px; /* Reduce aún más el tamaño de la fuente */
+    }
+
+    h1 {
+        font-size: 24px; /* Ajusta el tamaño del título */
+    }
 }
