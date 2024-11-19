@@ -18,6 +18,7 @@ body {
   background-color: black;
   width: 900px;
   height: 340px;
+  position: relative;
   display: absolute;
   border-radius: 25px;
   text-align: center;
@@ -26,7 +27,17 @@ body {
   
 }
 
-
+.container2 {
+  background-color: black;
+  width: 900px;
+  padding-bottom: 10px;
+  padding-bottom: 10px;
+  border-radius: 25px;
+  text-align: center;
+   margin-bottom: 20px;
+  border: 6px solid #362BB0;
+  
+}
 
 .btn {
   display: inline-block;
@@ -51,10 +62,15 @@ body {
 }
 
 
-
+.circulos{
+  display: flex;
+  justify-content: center;
+  gap: 54px;
+}
 
 .btncirculo{
    align-items: center;
+   display: block;
   justify-content: space-between;
   background-color:black;
   color: white;
@@ -74,3 +90,16 @@ body {
   transform: scale(1,1);
 }
 
+  
+canvas {
+  background-color: black;
+  width: 900px;
+  height: 340px;
+  position: absolute;
+  border-radius: 25px;
+  text-align: center;
+   margin-bottom: 20px;
+  border: 5px solid rgb(72, 52, 253);
+  
+  
+  }

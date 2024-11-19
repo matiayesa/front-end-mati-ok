@@ -14,7 +14,7 @@ const dibujar = (cursorX, cursorY) => {
   context.beginPath();
   context.moveTo(initialX, initialY);
   context.lineWidth = 12;
-  context.strokeStyle = "#000";
+  context.strokeStyle = "rgba(255, 255, 255, 255)";
   context.lineCap = "round";
   context.lineJoin = "round";
   context.lineTo(cursorX, cursorY);
