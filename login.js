@@ -34,8 +34,8 @@ document.getElementById('btnLogin').addEventListener('click', async () => {
             // Guardar el token en localStorage
             localStorage.setItem('authToken', data.token);
             console.log(data.token);
-            alert("Login exitoso");
-            return window.location.href = "perfil.html";
+            
+            return 
         } else {
             alert("Error: No se recibió un token de autenticación.");
         }

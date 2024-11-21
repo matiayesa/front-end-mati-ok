@@ -162,7 +162,7 @@ body {
     font-size: 20px;
     text-decoration: none;
     transition: background-color 0.3s;
-    border: 4px solid linear-gradient(98.57deg, #6456B7 14.53%, #140380 81.31%);;
+    border: none;
 }
 
 .login-button:hover {
