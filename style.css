@@ -48,7 +48,7 @@ body {
 }
 
 .btn {
-  display: inline-block;
+  
   padding: 10px 20px;
   background-color:black;
   color: white;
@@ -63,14 +63,18 @@ body {
 .btn:hover {
   background-color: #362BB0; 
   cursor: pointer;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
   transform: scale(1,1);
+=======
+>>>>>>> Stashed changes
 }
 
 .buttons {
   display: flex;
   justify-content: space-between;
+<<<<<<< Updated upstream
 }
 
 .buttons-only {
@@ -105,4 +109,6 @@ body {
   cursor: pointer;
   transform: scale(1,1);
 >>>>>>> 778a6a45be6eccc3d438d5753221968e73a55d3f
+=======
+>>>>>>> Stashed changes
 }
