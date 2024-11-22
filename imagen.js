@@ -26,7 +26,7 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
             throw new Error("Error subiendo archivo");
         }
     }
-
+     alert("La imagen fue subido con exito")
     window.location.href = "resultados.html";
 
   } catch (error) {
