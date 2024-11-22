@@ -13,8 +13,13 @@ correccionY = posicion.y;
 const dibujar = (cursorX, cursorY) => {
   context.beginPath();
   context.moveTo(initialX, initialY);
+<<<<<<< HEAD:index.js
   context.lineWidth = 50;
   context.strokeStyle = "#000";
+=======
+  context.lineWidth = 12;
+  context.strokeStyle = "rgba(255, 255, 255, 255)";
+>>>>>>> 778a6a45be6eccc3d438d5753221968e73a55d3f:canvas.js
   context.lineCap = "round";
   context.lineJoin = "round";
   context.lineTo(cursorX, cursorY);
@@ -59,3 +64,47 @@ mainCanvas.addEventListener("mouseup", mouseUp);
 //pantallas tactiles
 mainCanvas.addEventListener('touchstart', mouseDown);
 mainCanvas.addEventListener('touchend', mouseUp);
+
+
+document.getElementById("btnSubmit").addEventListener("click", async () => {
+
+  mainCanvas.toBlob(async (file) => {
+    const fd = new FormData;
+
+    fd.append('file', file);
+  
+    try {
+      const response = await fetch('http://localhost:3000/drawing/upload', {
+          method: 'POST',
+          headers: {
+              "Authorization": "Bearer " + localStorage.getItem('authToken')
+          },
+          body: fd,
+      });
+  
+      let data;
+      try {
+          data = await response.json();
+      } catch {}
+  
+      if (!response.ok) {
+          if (data && data.error) {
+              alert(data.error);
+              return
+          } else {
+              throw new Error("Error subiendo archivo");
+          }
+      }
+  
+      window.location.href = "resultados.html";
+  
+    } catch (error) {
+        console.log(error);
+        alert("Hubo un problema subiendo la imagen");
+    }
+  })
+
+});
+
+
+
