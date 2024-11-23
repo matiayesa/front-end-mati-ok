@@ -95,3 +95,12 @@ body {
   cursor: pointer;
   transform: scale(1,1);
 }
+
+.titulo{
+  display: flex; /* Usamos flexbox para alinear los elementos */
+  align-items: center; /* Centra verticalmente la imagen y el h1 */
+}
+
+.flor{
+  margin-right: 20px; /* Espacio entre la imagen y el h1 */
+}
