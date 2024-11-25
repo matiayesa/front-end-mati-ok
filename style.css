@@ -115,3 +115,8 @@ body {
   cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
 }
 
+.image-button img {
+  width: 100px; /* Ajusta el tamaño de la imagen */
+  height: 100px; /* Ajusta el tamaño de la imagen */
+  object-fit: cover; 
+}
