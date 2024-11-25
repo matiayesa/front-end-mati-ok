@@ -9,7 +9,7 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
         method: 'POST',
         headers: {
             "Authorization": "Bearer " + localStorage.getItem('authToken')
-        },
+        },  
         body: fd,
     });
 
