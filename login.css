@@ -193,6 +193,7 @@ body {
 
 .footer-links a:hover {
     text-decoration: underline;
+    color: #5871ff;
 }
 
 /* Media Queries para hacer el diseño responsive */
