@@ -95,3 +95,23 @@ body {
   cursor: pointer;
   transform: scale(1,1);
 }
+
+.titulo{
+  display: flex; /* Usamos flexbox para alinear los elementos */
+  align-items: center; /* Centra verticalmente la imagen y el h1 */
+}
+
+.flor{
+  margin-right: 20px; /* Espacio entre la imagen y el h1 */
+}
+
+.image-button {
+  position: absolute; /* Permite posicionar el botón respecto al contenedor */
+  top: 70px; /* Distancia desde la parte superior */
+  right: 70px; /* Distancia desde la parte derecha */
+  background: none; /* Elimina el fondo del botón */
+  border: none; /* Elimina el borde del botón */
+  padding: 0; /* Elimina los márgenes internos */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+

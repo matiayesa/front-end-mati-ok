@@ -1,6 +1,6 @@
 body {
   background: rgb(2,0,36);
-  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgb(58, 9, 121) 48%);
+  background: linear-gradient(180deg, #080421 0%, #150A5C 100%);
 font-family: sans-serif;
 display: flex;
 color: white;
