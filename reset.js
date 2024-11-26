@@ -3,7 +3,7 @@ document.getElementById('resetPasswordBtn').addEventListener('click', async () =
     const newPassword = document.getElementById("passwordId").value;
     const confirmPassword = document.getElementById("passwordId2").value;
 
-    if (!newPassword || !confirmPassword) {
+    if ( !email |!newPassword || !confirmPassword) {
         alert("Por favor, completa todos los campos.");
         return;
     }
