@@ -74,6 +74,10 @@ body {
   gap: 54px;
 }
 
+.perfil{
+  flex-direction: row;
+}
+
 .btncirculo{
    align-items: center;
    display: block;
