@@ -19,12 +19,12 @@ document.getElementById('sendCodeBtn').addEventListener('click', async () => {
             throw new Error("Error al enviar el código de verificación.");
         }
 
-        const data = await response.json();
-        if (data.success) {
-            alert("Código enviado a tu correo electrónico.");
-            document.getElementById('emailSection').style.display = 'none';
-            document.getElementById('codeSection').style.display = 'block';
+       const data = await response.json();
+        if (data.token) {
+            localStorage.setItem('authToken', data.token);
+            alert("Tu código es 4583");
             window.location.href = "codigo.html";
+        
         } else {
             alert("No se pudo enviar el código. Verifica tu correo.");
         }

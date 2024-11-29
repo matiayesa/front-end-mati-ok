@@ -1,5 +1,5 @@
 document.getElementById('resetPasswordBtn').addEventListener('click', async () => {
-    const email = document.getElementById("inputEmail").value;
+    const email = document.getElementById("email").value;
     const newPassword = document.getElementById("passwordId").value;
     const confirmPassword = document.getElementById("passwordId2").value;
 
@@ -17,24 +17,21 @@ document.getElementById('resetPasswordBtn').addEventListener('click', async () =
         const response = await fetch('http://localhost:3000/user/resetPassword', {
             method: 'POST',
             headers: {
-                "Authorization": `Bearer ${token}`,
+                "Authorization": "Bearer " + localStorage.getItem('authToken'),
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ email, nuevaContrasena: newPassword })
+            body: JSON.stringify({ nuevaContraseña: newPassword })
         });
 
-        if (!response.ok) {
-            throw new Error("Error al restablecer la contraseña.");
-        }
-
-        const data = await response.json();
-        if (data.success) {
+      
+        if (response.ok) {
             alert("Contraseña restablecida con éxito.");
             window.location.href = "login.html";
         } else {
             alert("No se pudo restablecer la contraseña.");
         }
     } catch (error) {
+        alert(error);
         console.error(error);
         alert("Hubo un problema al restablecer la contraseña.");
     }

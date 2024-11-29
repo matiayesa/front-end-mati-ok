@@ -121,6 +121,10 @@ body {
     border: 5px solid #362BB0;
 }
 
+.pp{
+    display: flex;
+    
+}
 .reset-container {
     background-color: black;
     padding: 20px;
@@ -243,4 +247,10 @@ body {
     h1 {
         font-size: 24px; /* Ajusta el tamaño del título */
     }
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
 }

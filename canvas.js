@@ -62,7 +62,7 @@ mainCanvas.addEventListener('touchend', mouseUp);
 
 
 document.getElementById("btnSubmit").addEventListener("click", async () => {
-
+  
   mainCanvas.toBlob(async (file) => {
     const fd = new FormData;
 
@@ -80,7 +80,9 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
       let data;
       try {
           data = await response.json();
-      } catch {}
+      } catch(err) {
+        console.log(err);
+      }
   
       if (!response.ok) {
           if (data && data.error) {
