@@ -74,9 +74,6 @@ body {
   gap: 54px;
 }
 
-.perfil{
-  
-}
 
 .btncirculo{
    align-items: center;
@@ -124,3 +121,4 @@ body {
   height: 100px; /* Ajusta el tamaño de la imagen */
   object-fit: cover; 
 }
+
