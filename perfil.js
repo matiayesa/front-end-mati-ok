@@ -13,7 +13,7 @@ document.getElementById('saveButton').addEventListener('click', async () => {
 
     try {
         // Enviar los datos al servidor
-        const response = await fetch('http://localhost:3000/profile', {
+        const response = await fetch('http://localhost:3000/sendprofile', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -39,19 +39,6 @@ document.getElementById('saveButton').addEventListener('click', async () => {
     } catch (error) {
         console.error("Hubo un error:", error);
         alert("Hubo un problema al guardar los datos.");
-    }
-});
-
-// Mostrar los datos almacenados al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    const storedProfile = localStorage.getItem('userProfile');
-    if (storedProfile) {
-        const { name, birthdate, gender } = JSON.parse(storedProfile);
-
-        // Mostrar los datos directamente en los campos del formulario
-        document.getElementById('name').value = name;
-        document.getElementById('birthdate').value = birthdate;
-        document.getElementById('gender').value = gender;
     }
 });
 
