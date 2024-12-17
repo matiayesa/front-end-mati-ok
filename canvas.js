@@ -2,37 +2,32 @@ const mainCanvas = document.getElementById("main-canvas");
 const context = mainCanvas.getContext("2d");
 
 
-let initialX;
-let initialY;
-let correccionX = 0;
-let correccionY = 0;
+let lastX;
+let lastY;
 let lineWidth = 5; // Tamaño inicial del trazo
 let strokeColor = "rgba(255, 255, 255, 1)"; // Color inicial del trazo
 
 
-const sizeSlider = document.getElementById("size-slider");
-const colorPicker = document.getElementById("color-picker");
-const downloadBtn = document.getElementById("download-btn");
+// const sizeSlider = document.getElementById("size-slider");
+// const colorPicker = document.getElementById("color-picker");
+// const downloadBtn = document.getElementById("download-btn");
 
 
-sizeSlider.addEventListener("input", () => {
-  lineWidth = sizeSlider.value;
-});
+// sizeSlider.addEventListener("input", () => {
+//   lineWidth = sizeSlider.value;
+// });
 
 
-colorPicker.addEventListener("input", () => {
-  strokeColor = colorPicker.value;
-});
+// colorPicker.addEventListener("input", () => {
+//   strokeColor = colorPicker.value;
+// });
 
 
-let posicion = mainCanvas.getBoundingClientRect();
-correccionX = posicion.x;
-correccionY = posicion.y;
-
+const canvasStart = mainCanvas.getBoundingClientRect();
 
 const dibujar = (cursorX, cursorY) => {
   context.beginPath();
-  context.moveTo(initialX, initialY);
+  context.moveTo(lastX, lastY);
   context.lineWidth = lineWidth; 
   context.strokeStyle = strokeColor; 
   context.lineCap = "round";
@@ -40,52 +35,49 @@ const dibujar = (cursorX, cursorY) => {
   context.lineTo(cursorX, cursorY);
   context.stroke();
 
-  initialX = cursorX;
-  initialY = cursorY;
+  lastX = cursorX;
+  lastY = cursorY;
 };
 
-
-const mouseDown = (evt) => {
-  evt.preventDefault();
-  if (evt.changedTouches === undefined) {
-    initialX = evt.offsetX;
-    initialY = evt.offsetY;
-  } else {
-    
-    initialX = evt.changedTouches[0].pageX - correccionX;
-    initialY = evt.changedTouches[0].pageY - correccionY;
-  }
-  dibujar(initialX, initialY);
-  mainCanvas.addEventListener("mousemove", mouseMoving);
-  mainCanvas.addEventListener("touchmove", mouseMoving);
+// Eventos de mouse
+const mouseMove = (evt) => {
+  dibujar(evt.offsetX, evt.offsetY);
 };
 
+mainCanvas.addEventListener("mousedown", (evt) => {
+  lastX = evt.offsetX;
+  lastY = evt.offsetY;
+  mainCanvas.addEventListener("mousemove", mouseMove);
+});
 
-const mouseMoving = (evt) => {
-  evt.preventDefault();
-  if (evt.changedTouches === undefined) {
-    dibujar(evt.offsetX, evt.offsetY);
-  } else {
-    dibujar(
-      evt.changedTouches[0].pageX - correccionX,
-      evt.changedTouches[0].pageY - correccionY
-    );
-  }
+mainCanvas.addEventListener("mouseup", (evt) => {
+  dibujar(evt.offsetX, evt.offsetY);
+  mainCanvas.removeEventListener("mousemove", mouseMove);
+});
+
+// Eventos de touch
+const touchMove = (evt) => {
+  evt.preventDefault(); // Evita que se mueva el navegador con el dedo
+  dibujar(
+    evt.changedTouches[0].pageX - canvasStart.x,
+    evt.changedTouches[0].pageY - canvasStart.y
+  );
 };
 
+mainCanvas.addEventListener("touchstart", (evt) => {
+  evt.preventDefault(); 
+  lastX = evt.changedTouches[0].pageX - canvasStart.x; 
+  lastY = evt.changedTouches[0].pageY - canvasStart.y;
+  mainCanvas.addEventListener("touchmove", touchMove);
+});
 
-const mouseUp = () => {
-  mainCanvas.removeEventListener("mousemove", mouseMoving);
-  mainCanvas.removeEventListener("touchmove", mouseMoving);
-};
-
-mainCanvas.addEventListener("mousedown", mouseDown);
-mainCanvas.addEventListener("mouseup", mouseUp);
-
-
-mainCanvas.addEventListener("touchstart", mouseDown);
-mainCanvas.addEventListener("touchend", mouseUp);
-
+mainCanvas.addEventListener("touchend", (evt) => {
+  dibujar(
+    evt.changedTouches[0].pageX - canvasStart.x,
+    evt.changedTouches[0].pageY - canvasStart.y
+  );
+  mainCanvas.removeEventListener("touchmove", touchMove);
+});
 
 document.getElementById("btnSubmit").addEventListener("click", async () => {
   mainCanvas.toBlob(async (file) => {
@@ -102,12 +94,7 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
         body: fd,
       });
 
-      let data;
-      try {
-        data = await response.json();
-      } catch (err) {
-        console.log(err);
-      }
+      const data = await response.json();
 
       if (!response.ok) {
         if (data && data.error) {
@@ -127,9 +114,9 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
 });
 
 // Botón para descargar imagen como archivo PNG
-downloadBtn.addEventListener("click", () => {
-  const link = document.createElement("a");
-  link.download = "canvas-image.png";
-  link.href = mainCanvas.toDataURL();
-  link.click();
-});
+// downloadBtn.addEventListener("click", () => {
+//   const link = document.createElement("a");
+//   link.download = "canvas-image.png";
+//   link.href = mainCanvas.toDataURL();
+//   link.click();
+// });

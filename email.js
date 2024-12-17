@@ -21,7 +21,7 @@ document.getElementById('sendCodeBtn').addEventListener('click', async () => {
 
        const data = await response.json();
         if (data.token) {
-            localStorage.setItem('authToken', data.token);
+            localStorage.setItem('verifyToken', data.token);
             alert("Tu código es 4583");
             window.location.href = "codigo.html";
         

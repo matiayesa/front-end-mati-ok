@@ -35,10 +35,8 @@ document.getElementById('btnLogin').addEventListener('click', async () => {
             localStorage.setItem('authToken', data.token);
             console.log(data.token);
             alert("Has iniciado sesion exitosamente!")
-            return window.location.href = "seleccion.html";
-        
-            } 
-            else {
+            window.location.href = "seleccion.html";
+        } else {
             alert("Error: No se recibió un token de autenticación.");
         }
     } catch (error) {

@@ -11,7 +11,7 @@ document.getElementById('verifyCodeBtn').addEventListener('click', async () => {
         const response = await fetch('http://localhost:3000/user/verifyCode', {
             method: 'POST',
             headers: {
-                "Authorization": "Bearer " + localStorage.getItem('authToken'),
+                "Authorization": "Bearer " + localStorage.getItem('verifyToken'),
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({ code })
