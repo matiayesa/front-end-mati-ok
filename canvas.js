@@ -8,19 +8,18 @@ let lineWidth = 5; // Tamaño inicial del trazo
 let strokeColor = "rgba(255, 255, 255, 1)"; // Color inicial del trazo
 
 
-// const sizeSlider = document.getElementById("size-slider");
-// const colorPicker = document.getElementById("color-picker");
-// const downloadBtn = document.getElementById("download-btn");
+const trazo = document.getElementById("trazo");
+const colorPicker = document.getElementById("colorPicker");
 
 
-// sizeSlider.addEventListener("input", () => {
-//   lineWidth = sizeSlider.value;
-// });
+trazo.addEventListener("input", () => {
+  lineWidth = trazo.value;
+});
 
 
-// colorPicker.addEventListener("input", () => {
-//   strokeColor = colorPicker.value;
-// });
+colorPicker.addEventListener("input", () => {
+  strokeColor = colorPicker.value;
+});
 
 
 const canvasStart = mainCanvas.getBoundingClientRect();
@@ -114,9 +113,11 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
 });
 
 // Botón para descargar imagen como archivo PNG
-// downloadBtn.addEventListener("click", () => {
-//   const link = document.createElement("a");
-//   link.download = "canvas-image.png";
-//   link.href = mainCanvas.toDataURL();
-//   link.click();
-// });
+
+const downloadBtn = document.getElementById("downloadBtn");
+downloadBtn.addEventListener("click", () => {
+  const link = document.createElement("a");
+  link.href = mainCanvas.toDataURL();
+  link.download = "canvas-image.png";
+  link.click();
+});

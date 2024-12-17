@@ -12,15 +12,23 @@
     <button class="image-button">
       <img src="./imagenes/PERFIL.jpg" alt="Botón de imagen">
   </button> 
-  
+  <div class="canvasConfig">
+    <div class="config">
+      <label for="trazo">Tamaño del trazo</label>
+      <input type="range" id="trazo" min="1" max="10" value="5">
+    </div>
+    <div class="config">
+      <label for="colorPicker">Color del trazo</label>
+      <input type="color" id="colorPicker" value="#ffffff">
+    </div>
+  </div>
     <main class="main-container">
         <canvas id="main-canvas" width="900" height="340"></canvas>
     </main>
 
     <div class="buttons">
-    
-      
-      <button id="btnSubmit" class="btn">Confirmar</button>
+      <button id="btnSubmit" class="btn">Enviar</button>
+      <button id="downloadBtn" class="btn">Descargar como imagen</button>
     </div>
 
     <script src="canvas.js"></script>
