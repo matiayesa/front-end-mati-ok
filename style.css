@@ -98,27 +98,27 @@ body {
 }
 
 .titulo{
-  display: flex; /* Usamos flexbox para alinear los elementos */
-  align-items: center; /* Centra verticalmente la imagen y el h1 */
+  display: flex; 
+  align-items: center; 
 }
 
 .flor{
-  margin-right: 20px; /* Espacio entre la imagen y el h1 */
+  margin-right: 20px; 
 }
 
 .image-button {
-  position: absolute; /* Permite posicionar el botón respecto al contenedor */
-  top: 70px; /* Distancia desde la parte superior */
-  right: 70px; /* Distancia desde la parte derecha */
-  background: none; /* Elimina el fondo del botón */
-  border: none; /* Elimina el borde del botón */
-  padding: 0; /* Elimina los márgenes internos */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  position: absolute; 
+  top: 70px; 
+  right: 70px; 
+  background: none; 
+  border: none; 
+  padding: 0; 
+  cursor: pointer; 
 }
 
 .image-button img {
-  width: 100px; /* Ajusta el tamaño de la imagen */
-  height: 100px; /* Ajusta el tamaño de la imagen */
+  width: 100px; 
+  height: 100px; 
   object-fit: cover; 
 }
 
@@ -136,5 +136,5 @@ body {
 }
 
 #size-slider, #color-picker, #download-button {
-  width: 300px; /* Ajusta el tamaño de los controles */
+  width: 300px; 
 }
